@@ -4,7 +4,7 @@ on: push
 
 jobs:
   first_job:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       name: welcome message
       run: echo "My first github actions job"
