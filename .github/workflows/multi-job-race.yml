@@ -1,0 +1,19 @@
+name: Job Race
+on: workflow_dispatch
+
+jobs:
+  tortoise:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slow and steady
+        run: |
+          sleep 5
+          echo "🐢 Tortoise finished!"
+
+  hare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Quick nap then dash
+        run: |
+          sleep 2
+          echo "🐇 Hare finished!"

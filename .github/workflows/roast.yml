@@ -1,0 +1,19 @@
+name: Daily Roast
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * *'
+
+jobs:
+  roast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pick a roast
+        run: |
+          roasts=(
+            "Your code compiles, but does it run on faith?"
+            "404: Motivation not found."
+            "git commit -m 'fixed it for real this time'"
+            "Your variable names age like fine wine — terrible."
+          )
+          echo "${roasts[$RANDOM % ${#roasts[@]}]}"

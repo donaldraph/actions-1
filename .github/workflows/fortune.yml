@@ -1,0 +1,12 @@
+name: Fortune Cookie
+on:
+  workflow_dispatch:
+
+jobs:
+  fortune:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install fortune
+        run: sudo apt-get install -y fortune-mod
+      - name: Get fortune
+        run: fortune

@@ -1,0 +1,15 @@
+name: Repo Snapshot
+on: push
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Show repo stats
+        run: |
+          echo "Files in repo:"
+          find . -type f | wc -l
+          echo "Latest commit:"
+          git log -1 --pretty=format:"%h - %an: %s"

@@ -1,0 +1,14 @@
+name: ASCII Banner
+on: push
+
+jobs:
+  banner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show banner
+        run: |
+          echo "  ____ ___    ____ ___    "
+          echo " / __ \\\\  \\  / __ \\\\  \\   "
+          echo "| |  | | |  | |  | | |  "
+          echo " \\__/ /  /   \\__/ /  /   "
+          echo "  Pipeline running..."
