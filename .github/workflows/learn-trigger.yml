@@ -21,20 +21,20 @@ on:
   # ╔══════════════════════════════════════════════════════════════════════════╗
   # ║ ACTIVE — manual run. Safest starting point: no code changes needed.       ║
   # ╚══════════════════════════════════════════════════════════════════════════╝
-  workflow_dispatch:
-    inputs:                       # optional form fields shown in the "Run" dialog
-      who:
-        description: "Who's running this?"
-        required: false
-        default: "Donald"
-        type: string
+  # workflow_dispatch:
+  #   inputs:                       # optional form fields shown in the "Run" dialog
+  #     who:
+  #       description: "Who's running this?"
+  #       required: false
+  #       default: "Donald"
+  #       type: string
 
   # ══════════════════════════════════════════════════════════════════════════════
   # CODE EVENTS
   # ══════════════════════════════════════════════════════════════════════════════
 
-  # push:                         # any push to matching refs
-  #   branches: [main, dev]       # filter: only these branches
+  push:                         # any push to matching refs
+    branches: [main, dev]       # filter: only these branches
   #   # tags: ["v*"]              # OR run on tag pushes matching a pattern
   #   # paths: ["frontend/**"]    # only when files under this path changed
   #   # paths-ignore: ["**.md"]   # skip if ONLY these files changed
