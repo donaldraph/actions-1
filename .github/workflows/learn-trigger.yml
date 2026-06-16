@@ -55,10 +55,10 @@ on:
   # pull_request_review_comment:  # a comment on a specific line of a PR's diff
   #   types: [created]
 
-  pull_request_review_thread:   # a PR review thread is marked resolved / unresolved
-    types: [resolved]
+  # pull_request_review_thread:   # a PR review thread is marked resolved / unresolved
+  #   types: [resolved]
 
-  # merge_group:                  # an entry is added to GitHub's merge queue
+  merge_group:                  # an entry is added to GitHub's merge queue
 
   # ══════════════════════════════════════════════════════════════════════════════
   # TIMER
