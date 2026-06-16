@@ -1,0 +1,160 @@
+# .github/workflows/learn-triggers.yml
+# A SANDBOX for learning the `on:` key — every trigger GitHub Actions supports,
+# all commented out except ONE so you can test them one at a time.
+#
+# ── HOW TO USE ─────────────────────────────────────────────────────────────────
+#   1. Right now only ONE trigger is active: workflow_dispatch (a manual button).
+#   2. Test it:  repo → Actions tab → "Trigger Lab" → "Run workflow".
+#   3. To learn another: uncomment exactly one trigger below, leave the others
+#      commented, and PUSH this file to your DEFAULT branch. (Most triggers only
+#      "arm" once the workflow file exists on the default branch.) Then do the
+#      action that fires it (open a PR, create a tag, etc.).
+#   4. Every run prints which event fired + dumps the full event payload, so you
+#      can see exactly what data each trigger hands you. Look at the job logs.
+#
+#   YAML rule of thumb: indentation = nesting. 2 spaces per level. No tabs.
+# ───────────────────────────────────────────────────────────────────────────────
+
+name: Trigger Lab
+
+on:
+  # ╔══════════════════════════════════════════════════════════════════════════╗
+  # ║ ACTIVE — manual run. Safest starting point: no code changes needed.       ║
+  # ╚══════════════════════════════════════════════════════════════════════════╝
+  workflow_dispatch:
+    inputs:                       # optional form fields shown in the "Run" dialog
+      who:
+        description: "Who's running this?"
+        required: false
+        default: "Kene"
+        type: string
+
+  # ══════════════════════════════════════════════════════════════════════════════
+  # CODE EVENTS
+  # ══════════════════════════════════════════════════════════════════════════════
+
+  # push:                         # any push to matching refs
+  #   branches: [main, dev]       # filter: only these branches
+  #   # tags: ["v*"]              # OR run on tag pushes matching a pattern
+  #   # paths: ["frontend/**"]    # only when files under this path changed
+  #   # paths-ignore: ["**.md"]   # skip if ONLY these files changed
+
+  # pull_request:                 # PR activity targeting matching branches
+  #   types: [opened, synchronize, reopened]   # this is the default if `types` omitted
+  #   branches: [main]
+  #   # paths: ["frontend/**"]
+
+  # pull_request_target:          # like pull_request, BUT runs in the base repo's
+  #                               # context WITH secrets. Used for trusted automation
+  #                               # on PRs from forks. Powerful and easy to misuse —
+  #                               # read the security docs before using.
+
+  # pull_request_review:          # a review is submitted / edited / dismissed
+  #   types: [submitted]
+
+  # pull_request_review_comment:  # a comment on a specific line of a PR's diff
+  #   types: [created]
+
+  # merge_group:                  # an entry is added to GitHub's merge queue
+
+  # ══════════════════════════════════════════════════════════════════════════════
+  # TIMER
+  # ══════════════════════════════════════════════════════════════════════════════
+
+  # schedule:                     # run on a cron timer (ALWAYS UTC; Lagos = UTC+1)
+  #   - cron: "0 9 * * 1"         # 09:00 UTC every Monday
+  #   # Fields:  minute hour day-of-month month day-of-week
+  #   #          0-59   0-23 1-31         1-12  0-6 (Sun=0)
+  #   # Note: only runs from the workflow file on the DEFAULT branch.
+
+  # ══════════════════════════════════════════════════════════════════════════════
+  # BRANCH / TAG LIFECYCLE
+  # ══════════════════════════════════════════════════════════════════════════════
+
+  # create:                       # a branch or tag is created
+  # delete:                       # a branch or tag is deleted
+
+  # ══════════════════════════════════════════════════════════════════════════════
+  # ISSUES & PROJECT MANAGEMENT
+  # ══════════════════════════════════════════════════════════════════════════════
+
+  # issues:                       # issue opened / edited / closed / labeled ...
+  #   types: [opened, labeled]
+  # issue_comment:                # a comment on an issue OR a PR (PRs are issues too)
+  #   types: [created]
+  # label:                        # a label is created / edited / deleted
+  # milestone:                    # a milestone is created / closed / etc.
+
+  # ══════════════════════════════════════════════════════════════════════════════
+  # DISCUSSIONS
+  # ══════════════════════════════════════════════════════════════════════════════
+
+  # discussion:                   # a discussion is created / answered / etc.
+  # discussion_comment:           # a comment on a discussion
+
+  # ══════════════════════════════════════════════════════════════════════════════
+  # RELEASES, PACKAGES & DEPLOYMENTS
+  # ══════════════════════════════════════════════════════════════════════════════
+
+  # release:                      # a release is published / created / edited
+  #   types: [published]
+  # registry_package:             # a package is published/updated to GH Packages
+  # deployment:                   # a deployment is created (via API/another action)
+  # deployment_status:            # a deployment's status changes
+
+  # ══════════════════════════════════════════════════════════════════════════════
+  # CHECKS & COMMIT STATUS
+  # ══════════════════════════════════════════════════════════════════════════════
+
+  # check_run:                    # a check run is created / completed / etc.
+  # check_suite:                  # a check suite activity
+  # status:                       # a commit's status changes (success/failure/pending)
+
+  # ══════════════════════════════════════════════════════════════════════════════
+  # REPO META
+  # ══════════════════════════════════════════════════════════════════════════════
+
+  # fork:                         # someone forks the repo
+  # watch:                        # someone stars the repo (event type is "started")
+  #   types: [started]
+  # public:                       # repo is changed from private to public
+  # gollum:                       # a wiki page is created or updated
+  # page_build:                   # a GitHub Pages build completes
+  # branch_protection_rule:       # a branch protection rule is created/edited/deleted
+
+  # ══════════════════════════════════════════════════════════════════════════════
+  # CHAINING & EXTERNAL TRIGGERS
+  # ══════════════════════════════════════════════════════════════════════════════
+
+  # workflow_run:                 # fires when ANOTHER workflow starts/finishes —
+  #   workflows: ["Deploy UNIZIK Builders Hub"]   # chain workflows together
+  #   types: [completed]
+  #   branches: [main]
+
+  # workflow_call:                # makes THIS workflow reusable — another workflow
+  #                               # calls it like a function. Define inputs/secrets:
+  #   inputs:
+  #     environment:
+  #       required: true
+  #       type: string
+  #   secrets:
+  #     token:
+  #       required: true
+
+  # repository_dispatch:          # fire from an external system via the REST API
+  #   types: [my-custom-event]    # POST to /repos/OWNER/REPO/dispatches with this type
+
+jobs:
+  show-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: What fired this run?
+        run: |
+          echo "Event name   : ${{ github.event_name }}"
+          echo "Triggered by : ${{ github.actor }}"
+          echo "Ref          : ${{ github.ref }}"
+          echo "SHA          : ${{ github.sha }}"
+          echo "Input 'who'  : ${{ github.event.inputs.who }}"
+
+      - name: Full event payload (great for learning what each trigger gives you)
+        run: echo '${{ toJSON(github.event) }}'
