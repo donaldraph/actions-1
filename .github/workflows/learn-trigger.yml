@@ -58,14 +58,14 @@ on:
   # pull_request_review_thread:   # a PR review thread is marked resolved / unresolved
   #   types: [resolved]
 
-  merge_group:                  # an entry is added to GitHub's merge queue
+  # merge_group:                  # an entry is added to GitHub's merge queue
 
   # ══════════════════════════════════════════════════════════════════════════════
   # TIMER
   # ══════════════════════════════════════════════════════════════════════════════
 
-  # schedule:                     # run on a cron timer (ALWAYS UTC; Lagos = UTC+1)
-  #   - cron: "0 9 * * 1"         # 09:00 UTC every Monday
+  schedule:                     # run on a cron timer (ALWAYS UTC; Lagos = UTC+1)
+    - cron: "0 9 * * 1"         # 09:00 UTC every Monday
   #   # Fields:  minute hour day-of-month month day-of-week
   #   #          0-59   0-23 1-31         1-12  0-6 (Sun=0)
   #   # Note: only runs from the workflow file on the DEFAULT branch.
