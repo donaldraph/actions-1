@@ -39,12 +39,12 @@ on:
   #   # paths: ["frontend/**"]    # only when files under this path changed
   #   # paths-ignore: ["**.md"]   # skip if ONLY these files changed
 
-  pull_request:                 # PR activity targeting matching branches
-    types: [opened, synchronize, reopened]   # this is the default if `types` omitted
-    branches: [trigger-lab]
+  # pull_request:                 # PR activity targeting matching branches
+  #   types: [opened, synchronize, reopened]   # this is the default if `types` omitted
+  #   branches: [trigger-lab]
   #   # paths: ["frontend/**"]
 
-  # pull_request_target:          # like pull_request, BUT runs in the base repo's
+  pull_request_target:          # like pull_request, BUT runs in the base repo's
   #                               # context WITH secrets. Used for trusted automation
   #                               # on PRs from forks. Powerful and easy to misuse —
   #                               # read the security docs before using.
