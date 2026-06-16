@@ -49,11 +49,11 @@ on:
   #                               # on PRs from forks. Powerful and easy to misuse —
   #                               # read the security docs before using.
 
-  pull_request_review:          # a review is submitted / edited / dismissed
-    types: [submitted]
+  # pull_request_review:          # a review is submitted / edited / dismissed
+  #   types: [submitted]
 
-  # pull_request_review_comment:  # a comment on a specific line of a PR's diff
-  #   types: [created]
+  pull_request_review_comment:  # a comment on a specific line of a PR's diff
+    types: [created]
 
   # pull_request_review_thread:   # a PR review thread is marked resolved / unresolved
   #   types: [resolved]
