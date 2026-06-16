@@ -44,13 +44,13 @@ on:
   #   branches: [trigger-lab]
   #   # paths: ["frontend/**"]
 
-  pull_request_target:          # like pull_request, BUT runs in the base repo's
+  # pull_request_target:          # like pull_request, BUT runs in the base repo's
   #                               # context WITH secrets. Used for trusted automation
   #                               # on PRs from forks. Powerful and easy to misuse —
   #                               # read the security docs before using.
 
-  # pull_request_review:          # a review is submitted / edited / dismissed
-  #   types: [submitted]
+  pull_request_review:          # a review is submitted / edited / dismissed
+    types: [submitted]
 
   # pull_request_review_comment:  # a comment on a specific line of a PR's diff
   #   types: [created]
