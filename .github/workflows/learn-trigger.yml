@@ -33,8 +33,8 @@ on:
   # CODE EVENTS
   # ══════════════════════════════════════════════════════════════════════════════
 
-  push:                         # any push to matching refs
-    branches: [main, dev]       # filter: only these branches
+  # push:                         # any push to matching refs
+  #   branches: [main, dev]       # filter: only these branches
   #   # tags: ["v*"]              # OR run on tag pushes matching a pattern
   #   # paths: ["frontend/**"]    # only when files under this path changed
   #   # paths-ignore: ["**.md"]   # skip if ONLY these files changed
@@ -71,7 +71,7 @@ on:
   # BRANCH / TAG LIFECYCLE
   # ══════════════════════════════════════════════════════════════════════════════
 
-  # create:                       # a branch or tag is created
+  create:                       # a branch or tag is created
   # delete:                       # a branch or tag is deleted
 
   # ══════════════════════════════════════════════════════════════════════════════
