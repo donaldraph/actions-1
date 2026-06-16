@@ -64,8 +64,8 @@ on:
   # TIMER
   # ══════════════════════════════════════════════════════════════════════════════
 
-  schedule:                     # run on a cron timer (ALWAYS UTC; Lagos = UTC+1)
-    - cron: "0 9 * * 1"         # 09:00 UTC every Monday
+  # schedule:                     # run on a cron timer (ALWAYS UTC; Lagos = UTC+1)
+  #   - cron: "0 9 * * 1"         # 09:00 UTC every Monday
   #   # Fields:  minute hour day-of-month month day-of-week
   #   #          0-59   0-23 1-31         1-12  0-6 (Sun=0)
   #   # Note: only runs from the workflow file on the DEFAULT branch.
@@ -74,7 +74,7 @@ on:
   # BRANCH / TAG LIFECYCLE
   # ══════════════════════════════════════════════════════════════════════════════
 
-  # create:                       # a branch or tag is created
+  create:                       # a branch or tag is created
   # delete:                       # a branch or tag is deleted
 
   # ══════════════════════════════════════════════════════════════════════════════
