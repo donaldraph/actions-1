@@ -39,9 +39,9 @@ on:
   #   # paths: ["frontend/**"]    # only when files under this path changed
   #   # paths-ignore: ["**.md"]   # skip if ONLY these files changed
 
-  # pull_request:                 # PR activity targeting matching branches
-  #   types: [opened, synchronize, reopened]   # this is the default if `types` omitted
-  #   branches: [main]
+  pull_request:                 # PR activity targeting matching branches
+    types: [opened, synchronize, reopened]   # this is the default if `types` omitted
+    branches: [main]
   #   # paths: ["frontend/**"]
 
   # pull_request_target:          # like pull_request, BUT runs in the base repo's
@@ -72,7 +72,7 @@ on:
   # ══════════════════════════════════════════════════════════════════════════════
 
   # create:                       # a branch or tag is created
-  delete:                       # a branch or tag is deleted
+  # delete:                       # a branch or tag is deleted
 
   # ══════════════════════════════════════════════════════════════════════════════
   # ISSUES & PROJECT MANAGEMENT
