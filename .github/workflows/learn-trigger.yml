@@ -26,7 +26,7 @@ on:
       who:
         description: "Who's running this?"
         required: false
-        default: "Kene"
+        default: "Donald"
         type: string
 
   # ══════════════════════════════════════════════════════════════════════════════
