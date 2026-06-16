@@ -74,8 +74,8 @@ on:
   # BRANCH / TAG LIFECYCLE
   # ══════════════════════════════════════════════════════════════════════════════
 
-  create:                       # a branch or tag is created
-  # delete:                       # a branch or tag is deleted
+  # create:                       # a branch or tag is created
+  delete:                       # a branch or tag is deleted
 
   # ══════════════════════════════════════════════════════════════════════════════
   # ISSUES & PROJECT MANAGEMENT
