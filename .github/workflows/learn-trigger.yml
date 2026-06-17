@@ -134,18 +134,18 @@ on:
   #   types: [completed]
   #   branches: [trigger-lab]
 
-  workflow_call:                # makes THIS workflow reusable — another workflow
-                                # calls it like a function. Define inputs/secrets:
-    inputs:
-      environment:
-        required: false
-        type: string
-    secrets:
-      token:
-        required: false
+  # workflow_call:                # makes THIS workflow reusable — another workflow
+  #                               # calls it like a function. Define inputs/secrets:
+  #   inputs:
+  #     environment:
+  #       required: false
+  #       type: string
+  #   secrets:
+  #     token:
+  #       required: false
 
-  # repository_dispatch:          # fire from an external system via the REST API
-  #   types: [my-custom-event]    # POST to /repos/OWNER/REPO/dispatches with this type
+  repository_dispatch:          # fire from an external system via the REST API
+    types: [my-custom-event]    # POST to /repos/OWNER/REPO/dispatches with this type
 
 jobs:
   show-trigger:
