@@ -110,8 +110,8 @@ on:
   # ══════════════════════════════════════════════════════════════════════════════
 
   # check_run:                    # a check run is created / completed / etc.
-  check_suite:                  # a check suite activity
-  # status:                       # a commit's status changes (success/failure/pending)
+  # check_suite:                  # a check suite activity
+  status:                       # a commit's status changes (success/failure/pending)
 
   # ══════════════════════════════════════════════════════════════════════════════
   # REPO META
