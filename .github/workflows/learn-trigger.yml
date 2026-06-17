@@ -123,16 +123,16 @@ on:
   # public:                       # repo is changed from private to public
   # gollum:                       # a wiki page is created or updated
   # page_build:                   # a GitHub Pages build completes
-  branch_protection_rule:       # a branch protection rule is created/edited/deleted
+  # branch_protection_rule:       # a branch protection rule is created/edited/deleted
 
   # ══════════════════════════════════════════════════════════════════════════════
   # CHAINING & EXTERNAL TRIGGERS
   # ══════════════════════════════════════════════════════════════════════════════
 
-  # workflow_run:                 # fires when ANOTHER workflow starts/finishes —
-  #   workflows: ["Deploy UNIZIK Builders Hub"]   # chain workflows together
-  #   types: [completed]
-  #   branches: [main]
+  workflow_run:                 # fires when ANOTHER workflow starts/finishes —
+    workflows: ["Repo Snapshot"]   # chain workflows together
+    types: [completed]
+    branches: [trigger-lab]
 
   # workflow_call:                # makes THIS workflow reusable — another workflow
   #                               # calls it like a function. Define inputs/secrets:
