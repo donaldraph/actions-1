@@ -21,27 +21,27 @@ on:
   # ╔══════════════════════════════════════════════════════════════════════════╗
   # ║ ACTIVE — manual run. Safest starting point: no code changes needed.       ║
   # ╚══════════════════════════════════════════════════════════════════════════╝
-  # workflow_dispatch:
-  #   inputs:                       # optional form fields shown in the "Run" dialog
-  #     who:
-  #       description: "Who's running this?"
-  #       required: false
-  #       default: "Donald"
-  #       type: string
+  workflow_dispatch:
+    inputs:                       # optional form fields shown in the "Run" dialog
+      who:
+        description: "Who's running this?"
+        required: false
+        default: "Donald"
+        type: string
 
   # ══════════════════════════════════════════════════════════════════════════════
   # CODE EVENTS
   # ══════════════════════════════════════════════════════════════════════════════
 
   # push:                         # any push to matching refs
-  #   branches: [main, dev, trigger-lab]   # filter: only these branches
+  #   branches: [main, dev]       # filter: only these branches
   #   # tags: ["v*"]              # OR run on tag pushes matching a pattern
   #   # paths: ["frontend/**"]    # only when files under this path changed
   #   # paths-ignore: ["**.md"]   # skip if ONLY these files changed
 
   # pull_request:                 # PR activity targeting matching branches
   #   types: [opened, synchronize, reopened]   # this is the default if `types` omitted
-  #   branches: [trigger-lab]
+  #   branches: [main]
   #   # paths: ["frontend/**"]
 
   # pull_request_target:          # like pull_request, BUT runs in the base repo's
@@ -130,22 +130,22 @@ on:
   # ══════════════════════════════════════════════════════════════════════════════
 
   # workflow_run:                 # fires when ANOTHER workflow starts/finishes —
-  #   workflows: ["Repo Snapshot"]   # chain workflows together
+  #   workflows: ["Deploy UNIZIK Builders Hub"]   # chain workflows together
   #   types: [completed]
-  #   branches: [trigger-lab]
+  #   branches: [main]
 
   # workflow_call:                # makes THIS workflow reusable — another workflow
   #                               # calls it like a function. Define inputs/secrets:
   #   inputs:
   #     environment:
-  #       required: false
+  #       required: true
   #       type: string
   #   secrets:
   #     token:
-  #       required: false
+  #       required: true
 
-  repository_dispatch:          # fire from an external system via the REST API
-    types: [my-custom-event]    # POST to /repos/OWNER/REPO/dispatches with this type
+  # repository_dispatch:          # fire from an external system via the REST API
+  #   types: [my-custom-event]    # POST to /repos/OWNER/REPO/dispatches with this type
 
 jobs:
   show-trigger:
