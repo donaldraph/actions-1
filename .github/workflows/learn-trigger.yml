@@ -111,13 +111,13 @@ on:
 
   # check_run:                    # a check run is created / completed / etc.
   # check_suite:                  # a check suite activity
-  status:                       # a commit's status changes (success/failure/pending)
+  # status:                       # a commit's status changes (success/failure/pending)
 
   # ══════════════════════════════════════════════════════════════════════════════
   # REPO META
   # ══════════════════════════════════════════════════════════════════════════════
 
-  # fork:                         # someone forks the repo
+  fork:                         # someone forks the repo
   # watch:                        # someone stars the repo (event type is "started")
   #   types: [started]
   # public:                       # repo is changed from private to public
