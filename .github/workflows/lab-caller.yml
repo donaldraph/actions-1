@@ -1,0 +1,13 @@
+# Temporary caller workflow used to test the `workflow_call` trigger of "Trigger Lab".
+# It invokes learn-trigger.yml as a reusable workflow via `uses:`.
+name: Lab Caller
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-trigger-lab:
+    uses: ./.github/workflows/learn-trigger.yml
+    with:
+      environment: lab
+    secrets: inherit
