@@ -99,9 +99,9 @@ on:
   # RELEASES, PACKAGES & DEPLOYMENTS
   # ══════════════════════════════════════════════════════════════════════════════
 
-  release:                      # a release is published / created / edited
-    types: [published]
-  # registry_package:             # a package is published/updated to GH Packages
+  # release:                      # a release is published / created / edited
+  #   types: [published]
+  registry_package:             # a package is published/updated to GH Packages
   # deployment:                   # a deployment is created (via API/another action)
   # deployment_status:            # a deployment's status changes
 
