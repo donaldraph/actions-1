@@ -117,9 +117,9 @@ on:
   # REPO META
   # ══════════════════════════════════════════════════════════════════════════════
 
-  fork:                         # someone forks the repo
-  # watch:                        # someone stars the repo (event type is "started")
-  #   types: [started]
+  # fork:                         # someone forks the repo
+  watch:                        # someone stars the repo (event type is "started")
+    types: [started]
   # public:                       # repo is changed from private to public
   # gollum:                       # a wiki page is created or updated
   # page_build:                   # a GitHub Pages build completes
