@@ -85,8 +85,8 @@ on:
   #   types: [opened, labeled]
   # issue_comment:                # a comment on an issue OR a PR (PRs are issues too)
   #   types: [created]
-  label:                        # a label is created / edited / deleted
-  # milestone:                    # a milestone is created / closed / etc.
+  # label:                        # a label is created / edited / deleted
+  milestone:                    # a milestone is created / closed / etc.
 
   # ══════════════════════════════════════════════════════════════════════════════
   # DISCUSSIONS
