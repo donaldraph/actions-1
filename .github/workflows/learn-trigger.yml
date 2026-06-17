@@ -121,8 +121,8 @@ on:
   # watch:                        # someone stars the repo (event type is "started")
   #   types: [started]
   # public:                       # repo is changed from private to public
-  gollum:                       # a wiki page is created or updated
-  # page_build:                   # a GitHub Pages build completes
+  # gollum:                       # a wiki page is created or updated
+  page_build:                   # a GitHub Pages build completes
   # branch_protection_rule:       # a branch protection rule is created/edited/deleted
 
   # ══════════════════════════════════════════════════════════════════════════════
