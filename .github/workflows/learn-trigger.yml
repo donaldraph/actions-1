@@ -86,13 +86,13 @@ on:
   # issue_comment:                # a comment on an issue OR a PR (PRs are issues too)
   #   types: [created]
   # label:                        # a label is created / edited / deleted
-  milestone:                    # a milestone is created / closed / etc.
+  # milestone:                    # a milestone is created / closed / etc.
 
   # ══════════════════════════════════════════════════════════════════════════════
   # DISCUSSIONS
   # ══════════════════════════════════════════════════════════════════════════════
 
-  # discussion:                   # a discussion is created / answered / etc.
+  discussion:                   # a discussion is created / answered / etc.
   # discussion_comment:           # a comment on a discussion
 
   # ══════════════════════════════════════════════════════════════════════════════
