@@ -92,8 +92,8 @@ on:
   # DISCUSSIONS
   # ══════════════════════════════════════════════════════════════════════════════
 
-  discussion:                   # a discussion is created / answered / etc.
-  # discussion_comment:           # a comment on a discussion
+  # discussion:                   # a discussion is created / answered / etc.
+  discussion_comment:           # a comment on a discussion
 
   # ══════════════════════════════════════════════════════════════════════════════
   # RELEASES, PACKAGES & DEPLOYMENTS
